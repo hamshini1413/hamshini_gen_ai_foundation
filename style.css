@@ -1,0 +1,181 @@
+/* ── Reset & Base ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  padding: 20px;
+}
+
+/* ── App Title ── */
+.app-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Search & Filter Bar ── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.filter-btn {
+  padding: 7px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: #e8f0fe;
+}
+
+.filter-btn.active {
+  background: #e8f0fe;
+  color: #1a73e8;
+  border-color: #1a73e8;
+}
+
+/* ── Card Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* ── Individual Card ── */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.1s;
+}
+
+.card:hover {
+  border-color: #999;
+  transform: translateY(-2px);
+}
+
+.card.selected {
+  border: 2px solid #1a73e8;
+  background: #e8f0fe;
+}
+
+.card-icon { font-size: 24px; margin-bottom: 8px; }
+.card-title { font-size: 13px; font-weight: 600; color: #222; margin-bottom: 4px; }
+.card-tag { font-size: 11px; color: #888; text-transform: capitalize; }
+
+/* ── Detail Panel ── */
+.detail {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+
+.detail-icon { font-size: 28px; }
+.detail-title { font-size: 17px; font-weight: 600; color: #222; }
+.detail-tag { font-size: 12px; color: #888; margin-top: 2px; text-transform: capitalize; }
+.detail-body { padding: 20px; }
+
+/* ── Description ── */
+.desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ── Code Block ── */
+.code-block {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ── Key Points ── */
+.key-points-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.point {
+  font-size: 13px;
+  color: #555;
+  padding: 4px 0 4px 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.point::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #1a73e8;
+}
+
+/* ── Empty State ── */
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 14px;
+  grid-column: 1 / -1;
+}
