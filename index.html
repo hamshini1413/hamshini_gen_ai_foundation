@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Concept Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Search & Filter Bar -->
+  <div class="container">
+    <h1 class="app-title">🐍 Python Concept Explorer</h1>
+
+    <div class="top-bar">
+      <input class="search-box" type="text" placeholder="Search concepts..." id="search" />
+      <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+      <button class="filter-btn" onclick="setFilter('basics', this)">Basics</button>
+      <button class="filter-btn" onclick="setFilter('oop', this)">OOP</button>
+      <button class="filter-btn" onclick="setFilter('ds', this)">Data Structures</button>
+      <button class="filter-btn" onclick="setFilter('advanced', this)">Advanced</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid" id="grid"></div>
+
+    <!-- Detail Panel (shown on card click) -->
+    <div class="detail" id="detail" style="display:none;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
