@@ -1,11 +1,17 @@
-# Question 1: The Vector Conflict
+# Lab Assignment 1 - Answers
 
-A Bag-of-Words vectorizer only counts how many times a word appears in a sentence. Since the word "light" appears in both Sentence 1 and Sentence 2, the vectors share a common feature and produce a similarity score. However, the meanings of the word are different in each sentence. Therefore, the model creates a false mathematical relationship because it cannot understand context.
+## Question 1: The Vector Conflict
 
-# Question 2: The Context Blindspot
+After calculating the dot product similarity scores, I observed that the Bag-of-Words model may assign a relatively high similarity score even when the word **"light"** has different meanings in different sentences. This happens because CountVectorizer only counts the occurrence of words and ignores their context. Since the same word appears in both sentences, the model considers them similar even though one refers to food and the other refers to illumination. This demonstrates the limitation of static vector representations.
 
-The Bag-of-Words approach ignores context and word order. It converts text into static frequency counts and loses the surrounding information that gives words their meaning. This creates problems for search engines and chatbots because words with multiple meanings are treated as the same word. As a result, the system may return irrelevant results.
+---
 
-# Question 3: The GenAI Architectural Fix
+## Question 2: The Context Blindspot
 
-Modern Large Language Models use context-aware embeddings and self-attention mechanisms. Self-attention allows the model to examine surrounding words and understand the intended meaning of a word in a sentence. Therefore, the word "light" receives different vector representations depending on its context. This enables models like GPT to understand language much more accurately than Bag-of-Words methods.
+The Bag-of-Words approach creates a major bottleneck for search engines and chatbots because it ignores the meaning and order of words. It converts text into simple word-frequency counts, causing words with multiple meanings to be treated as the same. As a result, the model cannot distinguish between different contexts or understand user intent. The linguistic property that is completely lost is **contextual semantics**.
+
+---
+
+## Question 3: The GenAI Architectural Fix
+
+Modern Large Language Models such as GPT and LLaMA solve this problem using **Context-Aware Embeddings** and **Masked Self-Attention** mechanisms. Self-attention allows the model to analyze surrounding words before assigning a vector representation to each word. Therefore, the word **"light"** receives different mathematical vectors depending on whether it refers to low-calorie food, illumination, or another meaning. This enables LLMs to understand context accurately and generate more meaningful responses.
